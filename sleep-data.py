@@ -34,15 +34,15 @@ def loadConfig():
 
 def generateConfigVariables(configJson):
     return {
-        "DBHOST": configJson.get("db-host"),
-        "DBNAME": configJson.get("db-dbname"),
-        "DBUSERNAME":configJson.get("db-username"),
-        "DBPASSWORD":configJson.get("db-password"),
-        "DBTABLENAME":configJson.get("db-tablename"),
+        "DBHOST": os.getenv("db-host"),
+        "DBNAME": os.getenv("db-dbname"),
+        "DBUSERNAME": os.getenv("db-username"),
+        "DBPASSWORD": os.getenv("db-password"),
+        "DBTABLENAME": os.getenv("db-tablename"),
         #Oura configuration
-        "OURA_PERSONAL_TOKEN":configJson.get("oura-token"),
+        "OURA_PERSONAL_TOKEN": os.getenv("oura-token"),
         "OURA_SLEEP_API_URL":"https://api.ouraring.com/v2/usercollection/daily_sleep",
-        "OURA_FROM_DATE":configJson.get("oura-from-date")
+        "OURA_FROM_DATE": os.getenv("oura-from-date")
     }
 
 
